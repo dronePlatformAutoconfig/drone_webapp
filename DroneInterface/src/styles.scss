@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+$primary: rgb(255, 106, 0);
+
+body {
+  margin: 0px;
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 18px;
+ // background-color: grey;
+}
+
+.container {
+  width: 80%;
+  margin: 0px auto;
+}
+
+header {  //РАсположение всего класса header
+  background: $primary;
+  padding: 1em 0px;
+
+  a { //характеристики под класса а
+    color: white;
+    text-decoration: none;
+  }
+
+  a.logo {//характеристики переменной logo в подклассе а
+    font-weight: bold;
+  }
+
+  nav {
+    float: right;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      display: flex;
+
+      li a {
+        padding: 1em;
+
+        &:hover {
+          background: darken($primary, 10%);//Color when hover
+        }
+      }
+    }
+  }
+}
+
+h1 {
+  margin-top: 2em;
+}
+
+
