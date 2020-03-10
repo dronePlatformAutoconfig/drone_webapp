@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { StationComponent } from './station/station.component';
 import { DroneComponent } from './drone/drone.component';
 import { ActionsComponent } from './actions/actions.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ActionsComponent } from './actions/actions.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
