@@ -8,6 +8,8 @@ import { StationComponent } from './station/station.component';
 import { DroneComponent } from './drone/drone.component';
 import { ActionsComponent } from './actions/actions.component';
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { ConnectionComponent } from './connection/connection.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     StationComponent,
     DroneComponent,
-    ActionsComponent
+    ActionsComponent,
+    ConnectionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

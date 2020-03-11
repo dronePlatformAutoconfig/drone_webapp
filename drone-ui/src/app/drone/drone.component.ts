@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ROSConnectionService} from "../rosconnection.service";
 
 @Component({
   selector: 'app-drone',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DroneComponent implements OnInit {
 
-  constructor() { }
+  constructor(public rosConnection: ROSConnectionService) { }
 
   ngOnInit(): void {
   }
