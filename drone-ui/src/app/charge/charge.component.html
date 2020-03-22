@@ -1,1 +1,8 @@
 <p>Charge: {{message['data']}}</p>
+<section class="ProgressBar-section">
+  <mat-progress-bar class="ProgressBar-margin"
+                    [color]="color"
+                    [mode]="mode"
+                    value="{{parseMsg(this.message['data'])}}">
+  </mat-progress-bar>
+</section>
