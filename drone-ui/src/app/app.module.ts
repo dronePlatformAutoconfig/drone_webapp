@@ -13,6 +13,10 @@ import { ConnectionComponent } from './connection/connection.component';
 import { ChargeComponent } from './charge/charge.component';
 import { SubscriberComponent } from './subscriber/subscriber.component';
 import { RoofComponent } from './roof/roof.component';
+import { ChargeBarComponent } from './charge-bar/charge-bar.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -25,12 +29,16 @@ import { RoofComponent } from './roof/roof.component';
     ChargeComponent,
     SubscriberComponent,
     RoofComponent,
+    ChargeBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

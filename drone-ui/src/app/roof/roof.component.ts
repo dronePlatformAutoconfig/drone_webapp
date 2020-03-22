@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { SubscriberComponent } from "../subscriber/subscriber.component";
 
 @Component({
   selector: 'app-roof',
   templateUrl: './roof.component.html',
   styleUrls: ['./roof.component.scss']
 })
-export class RoofComponent implements OnInit {
+export class RoofComponent extends SubscriberComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  topic = '/roof_state';
+  messageType = 'std_msgs/Bool';
 
 }
