@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import * as ROSLIB from 'roslib';
 
+const rosConnectedEvent = new Event('rosconnected');
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,22 +11,24 @@ export class ROSConnectionService {
   constructor() { }
 
   publicIP = '';
+  ros = new ROSLIB.Ros();
 
   connect(ipAsString) {
-    let ros = new ROSLIB.Ros({
+    this.ros = new ROSLIB.Ros({
       url : `ws://${ipAsString}:9090`
     });
 
-    ros.on('connection', () => {
+    this.ros.on('connection', () => {
       console.log('Connected to websocket server.');
       this.publicIP = ipAsString;
+      document.dispatchEvent(rosConnectedEvent);
     });
 
-    ros.on('error', function(error) {
+    this.ros.on('error', (error) => {
       console.log('Error connecting to websocket server: ', error);
     });
 
-    ros.on('close', function() {
+    this.ros.on('close', () => {
       console.log('Connection to websocket server closed.');
     });
   }

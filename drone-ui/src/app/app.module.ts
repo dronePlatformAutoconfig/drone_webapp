@@ -10,6 +10,8 @@ import { ActionsComponent } from './actions/actions.component';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { ConnectionComponent } from './connection/connection.component';
+import { ChargeComponent } from './charge/charge.component';
+import { SubscriberComponent } from './subscriber/subscriber.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ConnectionComponent } from './connection/connection.component';
     DroneComponent,
     ActionsComponent,
     ConnectionComponent,
+    ChargeComponent,
+    SubscriberComponent,
   ],
   imports: [
     BrowserModule,
