@@ -12,6 +12,7 @@ import { FormsModule } from "@angular/forms";
 import { ConnectionComponent } from './connection/connection.component';
 import { ChargeComponent } from './charge/charge.component';
 import { SubscriberComponent } from './subscriber/subscriber.component';
+import { RoofComponent } from './roof/roof.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SubscriberComponent } from './subscriber/subscriber.component';
     ConnectionComponent,
     ChargeComponent,
     SubscriberComponent,
+    RoofComponent,
   ],
   imports: [
     BrowserModule,
