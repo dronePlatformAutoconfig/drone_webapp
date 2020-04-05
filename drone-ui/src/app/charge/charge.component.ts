@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SubscriberComponent} from "../subscriber/subscriber.component";
+import { SubscriberComponent} from '../subscriber/subscriber.component';
+import { ThemePalette } from '@angular/material/core';
+import { ProgressBarMode } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-charge',
@@ -10,5 +12,11 @@ export class ChargeComponent extends SubscriberComponent {
 
   topic = '/charge';
   messageType = 'std_msgs/String';
+
+  color: ThemePalette = 'warn';
+  mode: ProgressBarMode = 'determinate';
+
+  parseMsg = parseInt;
+  value = parseInt(this.message['data']);
 
 }

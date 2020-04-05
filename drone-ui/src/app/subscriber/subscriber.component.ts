@@ -30,7 +30,6 @@ export class SubscriberComponent implements OnInit {
     });
     listener.subscribe((message) => {
         this.message = message;
-        console.log(message);
       }
     );
   }
