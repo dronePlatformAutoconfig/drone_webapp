@@ -17,6 +17,9 @@ import { CenterComponent } from './center/center.component';
 import { RoofComponent } from './roof/roof.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AuthGuard} from './auth.guard';
+import { LoginComponent } from './login/login.component';
+import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SubscriberComponent,
     CenterComponent,
     RoofComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +42,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BrowserAnimationsModule,
     MatProgressBarModule,
-
+    AmplifyUIAngularModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
