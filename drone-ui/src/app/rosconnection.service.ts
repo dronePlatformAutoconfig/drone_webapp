@@ -13,14 +13,14 @@ export class ROSConnectionService {
   publicIP = '';
   ros = new ROSLIB.Ros();
 
-  connect(ipAsString) {
+  connect(connectionString) {
     this.ros = new ROSLIB.Ros({
-      url : `ws://${ipAsString}:9090`
+      url : `${connectionString}`
     });
 
     this.ros.on('connection', () => {
       console.log('Connected to websocket server.');
-      this.publicIP = ipAsString;
+      this.publicIP = connectionString;
       document.dispatchEvent(rosConnectedEvent);
     });
 
