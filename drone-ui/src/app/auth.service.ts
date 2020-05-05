@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import Amplify, { Auth } from 'aws-amplify';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,12 @@ export class AuthService {
 
   constructor() { }
 
+  userIsLoggedIn = false;
+
   loggedIn(): boolean {
-    return !!localStorage.getItem('CognitoIdentityServiceProvider.276f3j5n0aj89hodvudai6jbgh.egor-2.idToken');
+    Auth.currentAuthenticatedUser()
+      .then(() => { this.userIsLoggedIn = true; })
+      .catch(() => { this.userIsLoggedIn = false; });
+    return  this.userIsLoggedIn
   }
 }
