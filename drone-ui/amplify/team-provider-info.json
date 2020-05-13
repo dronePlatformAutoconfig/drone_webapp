@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-drone-ui-dev-24433-authRole",
+            "UnauthRoleArn": "arn:aws:iam::969527955136:role/amplify-drone-ui-dev-24433-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::969527955136:role/amplify-drone-ui-dev-24433-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-drone-ui-dev-24433-deployment",
+            "UnauthRoleName": "amplify-drone-ui-dev-24433-unauthRole",
+            "StackName": "amplify-drone-ui-dev-24433",
+            "StackId": "arn:aws:cloudformation:us-east-2:969527955136:stack/amplify-drone-ui-dev-24433/91b501a0-7d17-11ea-9d68-0a9d1f6a4556",
+            "AmplifyAppId": "d31enrupc7w9jz"
+        },
+        "categories": {
+            "auth": {
+                "droneui6149dbd9": {}
+            }
+        }
+    }
+}

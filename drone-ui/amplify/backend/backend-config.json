@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"droneui6149dbd9": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
