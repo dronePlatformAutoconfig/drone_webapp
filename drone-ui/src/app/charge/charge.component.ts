@@ -17,6 +17,8 @@ export class ChargeComponent extends SubscriberComponent {
   mode: ProgressBarMode = 'determinate';
 
   parseMsg = parseInt;
-  value = parseInt(this.message['data']);
+  // value = parseInt(this.message['data']);
+  percent = 79;
+  value = 61 / 100 * this.percent;
 
 }
