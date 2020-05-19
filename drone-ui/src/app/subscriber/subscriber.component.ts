@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as ROSLIB from 'roslib';
-import {ROSConnectionService} from '../rosconnection.service';
+import { ROSConnectionService } from '../rosconnection.service';
+import { ElementRef } from "@angular/core";
 
 @Component({
   selector: 'app-subscriber',
@@ -9,11 +10,13 @@ import {ROSConnectionService} from '../rosconnection.service';
 })
 export class SubscriberComponent implements OnInit {
 
-  constructor(private rosConnection: ROSConnectionService) {
+  constructor(private rosConnection: ROSConnectionService, private elem: ElementRef) {
+    // If topic is defined as elements attribute use topic from attribute
+    const topicAttr = this.elem.nativeElement.attributes.topic;
+    this.topic = topicAttr ? topicAttr.nodeValue : '';
   }
 
   topic = '';
-  messageType = '';
   message = {};
 
   ngOnInit(): void {
@@ -26,11 +29,13 @@ export class SubscriberComponent implements OnInit {
     const listener = new ROSLIB.Topic({
       ros : this.rosConnection.ros,
       name : this.topic,
-      messageType : this.messageType
     });
     listener.subscribe((message) => {
         this.message = message;
       }
     );
+  }
+  getData() {
+    return this.message['data'] ? this.message['data'] : 'No data';
   }
 }

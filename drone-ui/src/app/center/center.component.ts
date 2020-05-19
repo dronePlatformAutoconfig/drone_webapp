@@ -7,6 +7,6 @@ import {SubscriberComponent} from "../subscriber/subscriber.component";
   styleUrls: ['./center.component.scss']
 })
 export class CenterComponent extends SubscriberComponent{
-  topic = '/center';
+  topic = '/centring_sys_state';
   messageType = 'std_msgs/String';
 }

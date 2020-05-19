@@ -1,5 +1,4 @@
 <div id="power-wrapper">
-  <span class="bold-supertext">{{ percent + '%' }}</span>
   <div id="power-empty">
     <svg width="61" height="38" viewBox="0 0 61 38" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect class="svg-fill-bg" y="0" width="18" height="38" rx="4" transform="rotate(0 0 0)"/>
@@ -7,11 +6,12 @@
       <rect class="svg-fill-bg" x="43" width="18" height="38" rx="4" transform="rotate(0 0 0)"/>
     </svg>
   </div>
-  <div id="power-mask" [style]="{width: value + 'px'}">
+  <div id="power-mask" [style]="{ width: calcPower() }">
     <svg width="61" height="38" viewBox="0 0 61 38" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect class="svg-fill-drone-accent" mask="url(#power-mask)" x="0" y="0" width="18" height="38" rx="4" transform="rotate(0 0 0)"/>
       <rect class="svg-fill-drone-accent" mask="url(#power-mask)" x="21" y="0" width="18" height="38" rx="4" transform="rotate(0 0 0)"/>
       <rect class="svg-fill-drone-accent" mask="url(#power-mask)" x="42" y="0" width="18" height="38" rx="4" transform="rotate(0 0 0)"/>
     </svg>
   </div>
+  <span class="bold-supertext">{{ messageAsPercent() }}</span>
 </div>
