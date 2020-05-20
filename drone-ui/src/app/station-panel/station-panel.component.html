@@ -1,0 +1,20 @@
+<div class="panel" id="station-panel">
+  <div class="panel-gradient">
+    <div class="panel-title">
+      <h1>Station</h1>
+    </div>
+    <div class="panel-inner-col">
+      <div class="bold-supertext">Roof</div>
+      <div class="light-large-text"><app-subscriber topic="/roof_state"></app-subscriber></div>
+      <button mat-button class="button fill-btn" id="open-btn">Open</button>
+      <button mat-button class="button fill-btn" id="close-btn">Close</button>
+    </div>
+  </div>
+  <div class="panel-contrast">
+    <div class="panel-inner-col">
+      <div class="bold-supertext">Drone</div>
+      <div class="light-large-text"><app-subscriber topic="/centring_sys_state"></app-subscriber></div>
+      <button mat-stroked-button class="button" id="center-drone-btn">Center Drone</button>
+    </div>
+  </div>
+</div>

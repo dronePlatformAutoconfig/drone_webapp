@@ -1,0 +1,50 @@
+<div class="panel" id="drone-panel">
+  <div class="panel-gradient">
+    <div class="panel-title">
+      <h1>Drone</h1>
+    </div>
+    <div class="panel-col-wrapper">
+      <div class="panel-inner-col">
+        <div class="bold-supertext">Latitude</div>
+        <div class="light-large-text">54.3287333</div>
+        <button mat-button class="button fill-btn" id="start-mission-btn">Start Mission</button>
+      </div>
+      <div class="panel-inner-col">
+        <div class="bold-supertext">Longitude</div>
+        <div class="light-large-text">-2.0541378</div>
+        <button mat-stroked-button class="button" id="go-to-base-btn">Go To Base</button>
+      </div>
+    </div>
+  </div>
+  <div class="panel-contrast">
+    <ul>
+      <li id="altitude">
+        <span class="bold-supertext">Altitude</span>
+        <div class="align-right">
+          <span class="light-large-text">102.9</span>
+          <span class="unit-text">m</span>
+        </div>
+      </li>
+      <li>
+        <app-charge></app-charge>
+      </li>
+      <li>
+        <div id="connection-box">
+          <div [ngTemplateOutlet]="connectedToStationTrue"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ng-template #connectedToStationTrue>
+  <svg width="21" height="32" viewBox="0 0 21 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="svg-fill-drone-accent" d="M17.5 7.11111V0H14V7.11111H7V0H3.5V7.11111C1.75 7.11111 0 8.88889 0 10.6667V20.4444L6.125 26.6667V32H14.875V26.6667L21 20.4444V10.6667C21 8.88889 19.25 7.11111 17.5 7.11111Z"/>
+  </svg>
+</ng-template>
+
+<ng-template #connectedToStationFalse>
+  <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -3px;">
+    <path class="svg-fill-bg" d="M34.7624 37L25.019 27.2567L23.5919 28.6662V33.9519H14.7824V28.6662L8.61571 22.4995V12.809C8.61571 12.2805 8.7919 11.7695 9.05619 11.2938L0 2.23762L2.25524 0L37 34.7624L34.7624 37ZM29.7586 22.4995V12.809C29.7586 11.0471 27.9967 9.28524 26.2348 9.28524V2.23762H22.711V9.28524H16.0157L29.4943 22.7638L29.7586 22.4995ZM15.6633 2.23762H12.1395V5.40905L15.6633 8.93286V2.23762Z"/>
+  </svg>
+</ng-template>

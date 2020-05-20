@@ -16,10 +16,13 @@ import { SubscriberComponent } from './subscriber/subscriber.component';
 import { CenterComponent } from './center/center.component';
 import { RoofComponent } from './roof/roof.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AuthGuard} from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
+import { DronePanelComponent } from './drone-panel/drone-panel.component';
+import { StationPanelComponent } from './station-panel/station-panel.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
     CenterComponent,
     RoofComponent,
     LoginComponent,
+    DronePanelComponent,
+    StationPanelComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +47,7 @@ import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
     FormsModule,
     BrowserAnimationsModule,
     MatProgressBarModule,
+    MatButtonModule,
     AmplifyUIAngularModule,
   ],
   providers: [AuthGuard],

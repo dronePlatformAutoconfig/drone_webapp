@@ -1,0 +1,24 @@
+#power-wrapper {
+  margin-top: 20px;
+  height: 38px;
+
+  .bold-supertext {
+    text-align: center;
+    position: relative;
+    top: -38px;
+  }
+}
+
+#power-mask {
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+#power-mask, #power-empty {
+  position: relative;
+}
+
+#power-mask {
+  top: -38px;
+  left: 8px;
+}
