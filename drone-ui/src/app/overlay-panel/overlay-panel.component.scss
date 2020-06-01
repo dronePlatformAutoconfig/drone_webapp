@@ -1,0 +1,42 @@
+#mission-progress {
+  width: 161px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(38, 41, 53, 0.72) 4%, rgba(47,88,102,0) 100%);
+
+  #mission-align {
+    padding-top: 16px;
+    margin-left: 30px;
+  }
+
+  #mission-title {
+    width: 100%;
+    height: 50px;
+
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.7em;
+      font-weight: 200;
+      color: var(--font-main-color);
+    }
+  }
+
+  #mission-progress-bar #progress-bar {
+    width: 3px;
+    height: 360px;
+    background: rgba(229, 229, 299, .28);
+    border-radius: 3px;
+    margin-top: 7px;
+    margin-left: 12px;
+  }
+
+  #photo-button {
+    background: var(--panel-primary-color);
+    position: absolute;
+    top: 100%;
+    margin-top: -75px;
+
+    svg {
+      margin-top: -2px;
+    }
+  }
+}

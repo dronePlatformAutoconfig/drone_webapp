@@ -23,6 +23,10 @@ import { LoginComponent } from './login/login.component';
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import { DronePanelComponent } from './drone-panel/drone-panel.component';
 import { StationPanelComponent } from './station-panel/station-panel.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { VideoPanelComponent } from './video-panel/video-panel.component';
+import { OverlayPanelComponent } from './overlay-panel/overlay-panel.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -39,6 +43,9 @@ import { StationPanelComponent } from './station-panel/station-panel.component';
     LoginComponent,
     DronePanelComponent,
     StationPanelComponent,
+    NavbarComponent,
+    VideoPanelComponent,
+    OverlayPanelComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +56,7 @@ import { StationPanelComponent } from './station-panel/station-panel.component';
     MatProgressBarModule,
     MatButtonModule,
     AmplifyUIAngularModule,
+    MDBBootstrapModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
