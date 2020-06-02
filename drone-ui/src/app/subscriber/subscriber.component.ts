@@ -14,9 +14,12 @@ export class SubscriberComponent implements OnInit {
     // If topic is defined as elements attribute use topic from attribute
     const topicAttr = this.elem.nativeElement.attributes.topic;
     this.topic = topicAttr ? topicAttr.nodeValue : '';
+    const defaultAttr = this.elem.nativeElement.attributes.default;
+    this.defaultValue = defaultAttr ? defaultAttr.nodeValue : 'No data';
   }
 
   topic = '';
+  defaultValue = '';
   message = {};
 
   ngOnInit(): void {
@@ -36,6 +39,6 @@ export class SubscriberComponent implements OnInit {
     );
   }
   getData() {
-    return this.message['data'] ? this.message['data'] : 'No data';
+    return this.message['data'] ? this.message['data'] : this.defaultValue;
   }
 }
