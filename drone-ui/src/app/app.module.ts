@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ConnectionComponent } from './connection/connection.component';
 import { ChargeComponent } from './charge/charge.component';
 import { SubscriberComponent } from './subscriber/subscriber.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -27,7 +26,6 @@ import { UserNavComponent } from './user-nav/user-nav.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    ConnectionComponent,
     ChargeComponent,
     SubscriberComponent,
     LoginComponent,

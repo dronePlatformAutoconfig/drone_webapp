@@ -1,6 +1,8 @@
 <div id="video-wrapper">
 <!--  <img src="http://{{this.rosConnection.publicIP}}:11315/stream?topic=/camera/rgb/image_raw" style="width: 600px; height: 400px; display: block">-->
-  <img id="video-stream" src="https://img5.goodfon.com/wallpaper/nbig/5/be/synth-retrowave-synthwave-fon-new-retro-wave-sintveiv-retr-4.jpg">
+  <div *ngIf="true; then videoIsAvailable; else videoIsNotAvailable">
+    <!--Display video if data is coming from topic-->
+  </div>
   <div id="video-overlay">
     <div id="video-overlay-left-col">
       <app-overlay-panel></app-overlay-panel>
@@ -9,3 +11,11 @@
     </div>
   </div>
 </div>
+
+<ng-template #videoIsAvailable>
+  <img id="video-stream" [src]=getVideoSrc()>
+</ng-template>
+
+<ng-template #videoIsNotAvailable>
+  <img id="video-stream" src="https://images.unsplash.com/photo-1542902093-d55926049754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
+</ng-template>

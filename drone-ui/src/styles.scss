@@ -196,8 +196,8 @@ button:focus {
     }
 
     ul #altitude {
-      margin: auto 15px;
-      margin-top: 20px;
+      width: 56px;
+      margin: 20px auto 0;
       height: 50px;
       .light-large-text {
         font-size: 1.2em;
@@ -242,6 +242,9 @@ button:focus {
 
 
 @media (min-width: 1200px) {
+  #dashboard-content {
+    margin-top: 10vw;
+  }
   .panel {
     margin-bottom: 37px;
   }

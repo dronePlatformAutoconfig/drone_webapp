@@ -10,7 +10,9 @@ import { ElementRef } from "@angular/core";
 })
 export class SubscriberComponent implements OnInit {
 
-  constructor(private rosConnection: ROSConnectionService, private elem: ElementRef) {
+  constructor(
+    public rosConnection: ROSConnectionService,
+    public elem: ElementRef) {
     // If topic is defined as elements attribute use topic from attribute
     const topicAttr = this.elem.nativeElement.attributes.topic;
     this.topic = topicAttr ? topicAttr.nodeValue : '';

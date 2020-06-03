@@ -10,17 +10,17 @@ export class ROSConnectionService {
 
   constructor() { }
 
-  publicIP = '';
   ros = new ROSLIB.Ros();
 
-  connect(connectionString) {
+  hostname = 'localhost';
+
+  connect_websocket() {
     this.ros = new ROSLIB.Ros({
-      url : `${connectionString}`
+      url : `ws://${this.hostname}:9090`
     });
 
     this.ros.on('connection', () => {
       console.log('Connected to websocket server.');
-      this.publicIP = connectionString;
       document.dispatchEvent(rosConnectedEvent);
     });
 
