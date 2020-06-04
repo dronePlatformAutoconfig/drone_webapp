@@ -2,7 +2,6 @@
 // created an AWS user pool and configured 'src/aws-exports.ts'.
 
 // WARNING: This is a **sample** file. It will be overwritten by Terraform bootstrapping scripts.
-// The 'hostname' will be assigned the elastic IP address.
 
 // FIXME: currently 'environment.ts' is replaced by prod configuration in Terraform, because for whatever reason
 // dev environment is built in Docker even with 'npm build --prod', so it's easier to replace dev config with generated
@@ -10,6 +9,5 @@
 
 export const environment = {
   production: true,
-  hostname: 'localhost',
   authenticationEnabled: true
 };

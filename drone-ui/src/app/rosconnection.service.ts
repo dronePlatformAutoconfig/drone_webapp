@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as ROSLIB from 'roslib';
-import {environment} from '../environments/environment';
 
 const rosConnectedEvent = new Event('rosconnected');
 
@@ -13,7 +12,7 @@ export class ROSConnectionService {
 
   ros = new ROSLIB.Ros();
 
-  hostname = environment.hostname;
+  hostname = window.location.hostname;
 
   connect_websocket() {
     this.ros = new ROSLIB.Ros({
