@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ChangeDetectorRef } from '@angular/core';
 import { ROSConnectionService } from '../rosconnection.service';
 
 @Component({
@@ -9,18 +8,22 @@ import { ROSConnectionService } from '../rosconnection.service';
 })
 export class VideoPanelComponent implements OnInit {
 
-  constructor(public rosConnection: ROSConnectionService, private changeDetector: ChangeDetectorRef) {}
+  constructor(public rosConnection: ROSConnectionService) {}
 
-  timestamp = '';
+  urlModifier = '';
 
   ngOnInit(): void {
     setInterval(() => {
-      this.timestamp = this.timestamp === ' ' ? '' : ' ';
-      this.changeDetector.markForCheck(); this.changeDetector.detectChanges(); }, 1000);
+      // Image reload is required after UI is connected to ROS, otherwise the image will not be displayed.
+      // A kind of creative solution: the change of URL forces the image to reload, however anything, besides
+      // the space character will break the link
+      // Inspired by this answer:
+      // https://stackoverflow.com/questions/17394440/add-random-variable-after-image-url-with-javascript
+      this.urlModifier = this.urlModifier === ' ' ? '' : ' '; }, 1000);
   }
 
   getVideoSrc() {
-    // Timestamp forces image to reload
-    return `http://${this.rosConnection.hostname}:8080/stream?topic=/drone_cam${this.timestamp}`;
+    // urlModifier forces image to reload
+    return `http://${this.rosConnection.hostname}:8080/stream?topic=/drone_cam${this.urlModifier}`;
   }
 }

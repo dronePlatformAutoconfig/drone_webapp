@@ -14,6 +14,6 @@ export class UserNavComponent implements OnInit {
   }
 
   getUsername() {
-    return this.authService.username;
+    return this.authService.username ? this.authService.username : 'not_authenticated';
   }
 }

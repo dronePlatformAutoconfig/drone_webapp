@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  // This environment is used for local development, authentication is disabled to make it independent from AWS
+  production: false,
+  hostname: 'localhost',
+  authenticationEnabled: false
 };
 
 /*
