@@ -4,6 +4,10 @@
 // WARNING: This is a **sample** file. It will be overwritten by Terraform bootstrapping scripts.
 // The 'hostname' will be assigned the elastic IP address.
 
+// FIXME: currently 'environment.ts' is replaced by prod configuration in Terraform, because for whatever reason
+// dev environment is built in Docker even with 'npm build --prod', so it's easier to replace dev config with generated
+// prod config instead.
+
 export const environment = {
   production: true,
   hostname: 'localhost',
