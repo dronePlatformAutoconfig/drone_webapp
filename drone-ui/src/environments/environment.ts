@@ -5,7 +5,6 @@
 export const environment = {
   // This environment is used for local development, authentication is disabled to make it independent from AWS
   production: false,
-  hostname: 'localhost',
   authenticationEnabled: false
 };
 

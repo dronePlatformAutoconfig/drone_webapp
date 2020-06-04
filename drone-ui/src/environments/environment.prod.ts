@@ -10,6 +10,5 @@
 
 export const environment = {
   production: true,
-  hostname: 'localhost',
   authenticationEnabled: true
 };
