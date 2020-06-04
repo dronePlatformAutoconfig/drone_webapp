@@ -1,0 +1,17 @@
+#user-name {
+  text-transform: capitalize;
+  float: right;
+  margin-top: 19px;
+  margin-right: 10px;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: var(--font-main-color);
+}
+
+#user-icon {
+  svg {
+    float: right;
+    margin-top: 16px;
+    fill: rgba(0, 0, 0, 0.44);
+  }
+}

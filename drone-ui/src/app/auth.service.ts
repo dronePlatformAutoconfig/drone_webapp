@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Amplify, { Auth } from 'aws-amplify';
+import { Auth } from 'aws-amplify';
 
 
 @Injectable({
@@ -9,12 +9,15 @@ export class AuthService {
 
   constructor() { }
 
-  userIsLoggedIn = false;
+  username = '';
 
-  loggedIn(): boolean {
-    Auth.currentAuthenticatedUser()
-      .then(() => { this.userIsLoggedIn = true; })
-      .catch(() => { this.userIsLoggedIn = false; });
-    return  this.userIsLoggedIn
+  loggedIn(): Promise<boolean> {
+    return new Promise((resolve) => {Auth.currentAuthenticatedUser()
+      .then((user) => {
+        this.username = user.username;
+        resolve(true);
+      })
+      .catch(() => {resolve(false); });
+    });
   }
 }

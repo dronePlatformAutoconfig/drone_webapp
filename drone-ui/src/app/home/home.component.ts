@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ROSConnectionService } from "../rosconnection.service";
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rosConnection: ROSConnectionService) { }
 
   ngOnInit(): void {
+    this.rosConnection.connect_websocket();
   }
 }

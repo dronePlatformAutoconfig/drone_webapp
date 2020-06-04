@@ -1,28 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-$bg-color: #333A4F;
-$font-main-color: #E5E5E5;
-$panel-primary-color: #3B435A;
-$panel-gradient-color: linear-gradient(40deg, rgba(76,85,113,0) 0%, rgba(76,85,113,1) 100%);;
-$panel-shadow: 2px 2px 18px rgba(45, 50, 62, .65);
 
-$drone-accent-color: #8757EF;
-$station-accent-color: #00FFF0;
+:root {
+  --bg-color: #333A4F;
+  --font-main-color: #E5E5E5;
+  --panel-primary-color: #3B435A;
+  --panel-gradient-color: linear-gradient(40deg, rgba(76,85,113,0) 0%, rgba(76,85,113,1) 100%);
+  --panel-shadow: 2px 2px 18px rgba(45, 50, 62, .65);
 
-$blue-violet-40: linear-gradient(30deg, rgba(0,148,255,1) 0%, rgba(195,68,255,1) 100%);
-$blue-green-40: linear-gradient(40deg, rgba(0,255,194,1) 0%, rgba(7,240,255,1) 100%);
-$violet-red-40: linear-gradient(40deg, rgba(197,94,174,1) 0%, rgba(255,120,120,1) 100%);
+  --drone-accent-color: #8757EF;
+  --station-accent-color: #00FFF0;
+
+  --blue-violet-40: linear-gradient(30deg, rgba(0,148,255,1) 0%, rgba(195,68,255,1) 100%);
+  --blue-green-40: linear-gradient(40deg, rgba(0,255,194,1) 0%, rgba(7,240,255,1) 100%);
+  --violet-red-40: linear-gradient(40deg, rgba(197,94,174,1) 0%, rgba(255,120,120,1) 100%);
+}
 
 * {
   padding: 0px;
   margin: 0px;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // text-shadow: rgba(255, 255, 255, .3) 0px 0px 1px;  // Text smoothing
 }
 
 body {
-  background: $bg-color;
+  background: var(--bg-color);
 }
 
 button {
@@ -79,20 +83,20 @@ button:focus {
 .fill-btn {
   border: none;
   background: #fff;
-  color: $panel-primary-color;
+  color: var(--panel-primary-color);
 }
 
 #start-mission-btn {
   width: 129px;
   margin-left: -3px;
-  background: $blue-violet-40;
+  background: var(--blue-violet-40);
 }
 
 #go-to-base-btn {
   width: 110px;
   margin-left: -3px;
-  color: $drone-accent-color;
-  border-color: $drone-accent-color;
+  color: var(--drone-accent-color);
+  border-color: var(--drone-accent-color);
 }
 
 #open-btn {
@@ -100,34 +104,37 @@ button:focus {
   margin-left: -3px;
   float: left;
   margin-right: 12px;
-  background: $blue-green-40;
+  background: var(--blue-green-40);
 }
 
 #close-btn {
   width: 70px;
   float: left;
-  background: $violet-red-40;
+  background: var(--violet-red-40);
 }
 
 #center-drone-btn {
   width: 143px;
   margin-left: -3px;
-  border-color: $station-accent-color;
-  color: $station-accent-color;
+  border-color: var(--station-accent-color);
+  color: var(--station-accent-color);
 }
 
 .panel {
-  width: 415px;
+  width: 50%;
+  min-width: 415px;
+  max-width: 768px;
   height: 244px;
-  font-family: 'Open Sans';
-  color: $font-main-color;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--font-main-color);
+  float: left;
   border-top: solid 3px;
-  box-shadow: $panel-shadow;
+  box-shadow: var(--panel-shadow);
 
   .panel-gradient {
     width: 50%;
     height: 100%;
-    background: $panel-gradient-color;
+    background: var(--panel-gradient-color);
     float: left;
 
     .panel-title {
@@ -153,7 +160,7 @@ button:focus {
 }
 
 #drone-panel {
-  border-top-color: $drone-accent-color;
+  border-top-color: var(--drone-accent-color);
 
   .panel-gradient {
     width: 77%;
@@ -178,7 +185,7 @@ button:focus {
   .panel-contrast {
     max-width: 23%;
     height: 100%;
-    background: $panel-primary-color;
+    background: var(--panel-primary-color);
 
     ul li {
       text-align: center;
@@ -189,8 +196,8 @@ button:focus {
     }
 
     ul #altitude {
-      margin: auto 15px;
-      margin-top: 20px;
+      width: 56px;
+      margin: 20px auto 0;
       height: 50px;
       .light-large-text {
         font-size: 1.2em;
@@ -201,7 +208,7 @@ button:focus {
 }
 
 #station-panel {
-  border-top-color: $station-accent-color;
+  border-top-color: var(--station-accent-color);
 
   .panel-gradient .panel-inner-col {
     margin-top: 30px;
@@ -209,7 +216,7 @@ button:focus {
   }
 
   .panel-contrast {
-    background: $panel-primary-color;
+    background: var(--panel-primary-color);
   }
 
   .panel-contrast .panel-inner-col {
@@ -222,9 +229,33 @@ button:focus {
 }
 
 .svg-fill-drone-accent {
-  fill: $drone-accent-color;
+  fill: var(--drone-accent-color);
 }
 
 .svg-fill-bg {
-  fill: $bg-color;
+  fill: var(--bg-color);
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+
+@media (min-width: 1200px) {
+  #dashboard-content {
+    margin-top: 3vw;
+  }
+  .panel {
+    margin-bottom: 37px;
+  }
+}
+
+@media (max-width: 992px) {
+  .panel {
+    width: 100%;
+  }
+}
+
+*{
+  transition: all .3s ease-in-out;
 }
