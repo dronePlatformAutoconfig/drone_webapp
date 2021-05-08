@@ -9,5 +9,5 @@
 
 export const environment = {
   production: true,
-  authenticationEnabled: false
+  authenticationEnabled: false // FIXME: authentication disabled
 };
