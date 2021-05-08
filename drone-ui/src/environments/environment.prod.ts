@@ -9,5 +9,5 @@
 
 export const environment = {
   production: true,
-  authenticationEnabled: true
+  authenticationEnabled: false
 };
