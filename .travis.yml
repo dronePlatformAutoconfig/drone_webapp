@@ -14,5 +14,10 @@ deploy:
   app: "drone-station-webapp"
   env: "drone-station-dev"
   bucket_name: "drone-station-webapp-bucket"
-  zip_file: app.zip
+  zip_file: "app.zip"
   skip_cleanup: true
+  only_create_app_version: false
+  on:
+   branch: master
+after_deploy:
+ - rm app.zip
