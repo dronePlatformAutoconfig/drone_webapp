@@ -4,11 +4,15 @@ node_js:
 
 script: echo "npm test temporarily disabled"
 before_deploy:
+  - npm install -g angular-cli
+  - cd server; npm install -g; cd -
   - ./build.sh
 deploy:
   provider: elasticbeanstalk
-  access_key_id: $ACCESS_KEY_ID
-  secret_access_key: $SECRET_ACCESS_KEY
+  access_key_id:
+    secure: "Gp7PuZuvPeWJkCeavfKb3gGs89JbP2dW3T/CjjCEzSNzJKsnyl4ujrg7dLi83eqeNCkg+ZBJijvCE7TXVPejgL/DFBD1b48sPx3M3EQ8Wj1zvFQX7LHKJcUu3XEn8VfK7KTqc6vxmMxPdD0qSSmztvscbhlpdYJ6yCidv28OlmY649uzhkJcFb+wX6G1gnFvn5xtEXs9yyezS5k/XEkIaY9uVpYEnnlZXwAC3k9CKBa7E8cZa8NdW08CqNoaX58ouvar0v8KH6pXlUyYSZpLQUAxQx29fm7vuMPxlXzr/yVwtWOwHgFqg3QNBxin5GjNo76eTNOISPxQWV0ZwqGJsZsfIvDNee0bWHDPRe/CKWbNgkLEsOEQYTkaXaoG6yk85h7tCBL8wC1gPPO8P8S7QW+cVtqc26Als5IxRxMjSx+cQW2if3gG+d+rvwQXmn3TXsdq9XkNvApyerXTJerJpeCZYVE+YvLS5dOaZWgNhbisuNQCYSrdx4vYRM6Cx6IvSw3BqBPnbtL5kDkAyyErdwoZ6M8PR/2L4Ea378wPaj9jHqfXAHBB6/eTGCa12ur3s1xMV7y0eCucVPEDl0XFPUt6uzKl+6CD50XMER4h0AxoIzNcXJnFwIAK2jzgaaBMSrNZUO2oI+ID/HK5dsu7FQgY1xlqpT3OVdf0+kztnm4="
+  secret_access_key:
+    secure: "ilLWFnwStEAdblBlkkDWA7X1bim97DoLODZ2/m+bTsAo8Qtye3LUDVh+lvBLuiE4rcFfJVZkzpXefyCEojVsNgrn9uJozROSWs9a3two6MZc+sTV2sQyqSeY92MsHHiJRffUhQQOeKVW4kfLkrEnUzeacHVt8dlwNO3iipJ/MLxpkk96T6E6Dht5+phq0vpGtAXWZL5Ar/w3fc2NLCtwjhPng4VysywSlS9reetbH9EwGLn9CNZbTbcGQEFCo/jF8r7iazhtjUQFiAbf/dkX1ceVc15ZYtkPJo+HQ3gcJjdpXv2yR93eYNIcXipMWNsaQqzHteW0uQus1GJ7EczAQs88Xt6GHYWEY5XwLdAFgugJ0uFiOkXn4zyAHooGMQI8c/o0Eh5bWanqB3BPPR3ATxWHApMiKpe1/3Hcf+uiIb764LABlzWL+Dm45VWVvT/c/4yICd6WM084CprzGvkUWbyq1uBcxLnzL8woFgcNxCVQuCbf7akdFOTI8vebvOW2Etqs2KOpnLNqpKBzDgRO3rIyTzwNIMK9x6ICLywha41xey7IEhAPtCPRsrSDSVxNyQLqIAwa2PmmEBKN4NjRPfwdbiKPrTVtr/lBWxtgkB8H0W1s3iHsdZ4ibktsEXIr8j43sGzcAn3tJcSbPzeyVdoUsLISdKEg3yNI0tO2P2w="
   region: "eu-west-1"
   app: "drone-station-webapp"
   env: "drone-station-dev"
